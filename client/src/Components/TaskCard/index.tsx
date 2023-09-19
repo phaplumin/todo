@@ -21,9 +21,9 @@ const TaskCard: React.FC<TaskCardProps> =({id, name,list, color, done})=>{
 
     const{setShowDelete,setId} = useContext(DeleteContext) as DeleteType;
     const{checkTask} = useContext(TaskListContext) as TaskListType;
-    
-    function handleCheck(){
-        checkTask(id);
+
+    async function handleCheck(){
+        await checkTask(id);
     }
 
     function handleDelete(){
@@ -43,7 +43,7 @@ const TaskCard: React.FC<TaskCardProps> =({id, name,list, color, done})=>{
                     <S.ListName>{list}</S.ListName>
                 </S.ListBelong>
             </S.Description>
-            
+
             <S.Icon src={Edit}/><S.Icon src={Erase} onClick={handleDelete}/>
         </S.Container>
     );

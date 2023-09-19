@@ -17,11 +17,11 @@ const DeleteModal:React.FC =()=>{
         setShowDelete(false);
     };
 
-    function handleConfirm(){
-        deleteTask(id);
+    async function handleConfirm(){
+        await deleteTask(id);
         setId(0);
         setShowDelete(false);
-        
+
     }
 
 
